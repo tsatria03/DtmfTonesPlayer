@@ -1,0 +1,2 @@
+new in 0.1
+Changed the letter U key from toggling on and off the pettle to Enter.

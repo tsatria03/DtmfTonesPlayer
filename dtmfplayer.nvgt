@@ -1,0 +1,186 @@
+#include"bgt_compat.nvgt"
+#include"speech.nvgt"
+int keyhold=1, dialtime=50;
+sound dial1, dial2, dial3, dial4, dial5, dial6, dial7, dial8, dial9, dial10, dial11, dial12;
+timer dialtimer;
+void main()
+{
+show_game_window("Tone player");
+dtmfplay();
+}
+void dtmfplay()
+{
+dial1.load("sounds/dtmf-1.wav");
+dial2.load("sounds/dtmf-2.wav");
+dial3.load("sounds/dtmf-3.wav");
+dial4.load("sounds/dtmf-4.wav");
+dial5.load("sounds/dtmf-5.wav");
+dial6.load("sounds/dtmf-6.wav");
+dial7.load("sounds/dtmf-7.wav");
+dial8.load("sounds/dtmf-8.wav");
+dial9.load("sounds/dtmf-9.wav");
+dial10.load("sounds/dtmf-0.wav");
+dial11.load("sounds/dtmf-star.wav");
+dial12.load("sounds/dtmf-pound.wav");
+while(true)
+{
+wait(5);
+if(key_pressed(KEY_1))
+{
+dial1.play_looped();
+}
+if(key_pressed(KEY_2))
+{
+dial2.play_looped();
+}
+if(key_pressed(KEY_3))
+{
+dial3.play_looped();
+}
+if(key_pressed(KEY_4))
+{
+dial4.play_looped();
+}
+if(key_pressed(KEY_5))
+{
+dial5.play_looped();
+}
+if(key_pressed(KEY_6))
+{
+dial6.play_looped();
+}
+if(key_pressed(KEY_7))
+{
+dial7.play_looped();
+}
+if(key_pressed(KEY_8))
+{
+dial8.play_looped();
+}
+if(key_pressed(KEY_9))
+{
+dial9.play_looped();
+}
+if(key_pressed(KEY_0))
+{
+dial10.play_looped();
+}
+if(key_pressed(KEY_MINUS))
+{
+dial11.play_looped();
+}
+if(key_pressed(KEY_EQUALS))
+{
+dial12.play_looped();
+}
+if(key_released(KEY_1) and keyhold==1)
+{
+dial1.stop();
+}
+if(key_released(KEY_2) and keyhold==1)
+{
+dial2.stop();
+}
+if(key_released(KEY_3) and keyhold==1)
+{
+dial3.stop();
+}
+if(key_released(KEY_4) and keyhold==1)
+{
+dial4.stop();
+}
+if(key_released(KEY_5) and keyhold==1)
+{
+dial5.stop();
+}
+if(key_released(KEY_6) and keyhold==1)
+{
+dial6.stop();
+}
+if(key_released(KEY_7) and keyhold==1)
+{
+dial7.stop();
+}
+if(key_released(KEY_8) and keyhold==1)
+{
+dial8.stop();
+}
+if(key_released(KEY_9) and keyhold==1)
+{
+dial9.stop();
+}
+if(key_released(KEY_0) and keyhold==1)
+{
+dial10.stop();
+}
+if(key_released(KEY_MINUS) and keyhold==1)
+{
+dial11.stop();
+}
+if(key_released(KEY_EQUALS) and keyhold==1)
+{
+dial12.stop();
+}
+if(key_down(KEY_UP) and dialtimer.elapsed>=dialtime)
+{
+dial1.pitch=dial1.pitch+1;
+dial2.pitch=dial2.pitch+1;
+dial3.pitch=dial3.pitch+1;
+dial4.pitch=dial4.pitch+1;
+dial5.pitch=dial5.pitch+1;
+dial6.pitch=dial6.pitch+1;
+dial7.pitch=dial7.pitch+1;
+dial8.pitch=dial8.pitch+1;
+dial9.pitch=dial9.pitch+1;
+dial10.pitch=dial10.pitch+1;
+dial11.pitch=dial11.pitch+1;
+dial12.pitch=dial12.pitch+1;
+dialtimer.restart();
+}
+if(key_down(KEY_DOWN) and dialtimer.elapsed>=dialtime)
+{
+dial1.pitch=dial1.pitch-1;
+dial2.pitch=dial2.pitch-1;
+dial3.pitch=dial3.pitch-1;
+dial4.pitch=dial4.pitch-1;
+dial5.pitch=dial5.pitch-1;
+dial6.pitch=dial6.pitch-1;
+dial7.pitch=dial7.pitch-1;
+dial8.pitch=dial8.pitch-1;
+dial9.pitch=dial9.pitch-1;
+dial10.pitch=dial10.pitch-1;
+dial11.pitch=dial11.pitch-1;
+dial12.pitch=dial12.pitch-1;
+dialtimer.restart();
+}
+if(key_pressed(KEY_RETURN))
+{
+if(keyhold==1)
+{
+speak("pettle on");
+keyhold=0;
+}
+else
+{
+speak("pettle off");
+dial1.stop();
+dial2.stop();
+dial3.stop();
+dial4.stop();
+dial5.stop();
+dial6.stop();
+dial7.stop();
+dial8.stop();
+dial9.stop();
+dial10.stop();
+dial11.stop();
+dial12.stop();
+keyhold=1;
+}
+}
+if(key_pressed(KEY_ESCAPE))
+{
+exit();
+}
+}
+}

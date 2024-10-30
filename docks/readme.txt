@@ -1,0 +1,2 @@
+Welcome to this boring thingy I made. All it does is play DTMF tones you here when dialing a phone number on a telephone or a cellphone. Do what ever you want with this. I was bord one day and was learning how the sound object worked, so have fun if you must.
+The number keys plays dial tones. Hold and release to make the tones longer or shorter. Press and hold up and down arrows to increase and decrease the pitch of the tones. Press the enter key to toggle the sustain pettle on or off.
