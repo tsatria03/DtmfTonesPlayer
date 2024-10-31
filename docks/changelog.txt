@@ -1,3 +1,4 @@
 new in 0.1
+Minor code optimizations.
 The app no longer uses timers for controling the pitch of the dial tones.
 Changed the letter U key from toggling on and off the pettle to Enter.
