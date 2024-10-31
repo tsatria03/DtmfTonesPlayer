@@ -134,7 +134,6 @@ dial9.pitch=dial9.pitch+1;
 dial10.pitch=dial10.pitch+1;
 dial11.pitch=dial11.pitch+1;
 dial12.pitch=dial12.pitch+1;
-dialtimer.restart();
 }
 if(key_down(KEY_DOWN))
 {
@@ -150,7 +149,6 @@ dial9.pitch=dial9.pitch-1;
 dial10.pitch=dial10.pitch-1;
 dial11.pitch=dial11.pitch-1;
 dial12.pitch=dial12.pitch-1;
-dialtimer.restart();
 }
 if(key_pressed(KEY_RETURN))
 {
