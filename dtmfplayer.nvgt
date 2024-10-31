@@ -1,8 +1,7 @@
 #include"bgt_compat.nvgt"
 #include"speech.nvgt"
-int keyhold=1, dialtime=50;
+int keyhold=1;
 sound dial1, dial2, dial3, dial4, dial5, dial6, dial7, dial8, dial9, dial10, dial11, dial12;
-timer dialtimer;
 void main()
 {
 show_game_window("Tone player");
@@ -121,7 +120,7 @@ if(key_released(KEY_EQUALS) and keyhold==1)
 {
 dial12.stop();
 }
-if(key_down(KEY_UP) and dialtimer.elapsed>=dialtime)
+if(key_down(KEY_UP))
 {
 dial1.pitch=dial1.pitch+1;
 dial2.pitch=dial2.pitch+1;
@@ -137,7 +136,7 @@ dial11.pitch=dial11.pitch+1;
 dial12.pitch=dial12.pitch+1;
 dialtimer.restart();
 }
-if(key_down(KEY_DOWN) and dialtimer.elapsed>=dialtime)
+if(key_down(KEY_DOWN))
 {
 dial1.pitch=dial1.pitch-1;
 dial2.pitch=dial2.pitch-1;
